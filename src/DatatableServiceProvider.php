@@ -1,8 +1,6 @@
 <?php namespace Saguajardo\Datatable;
 
-use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Foundation\Application;
 
 class DatatableServiceProvider extends ServiceProvider
 {
@@ -45,12 +43,12 @@ class DatatableServiceProvider extends ServiceProvider
 
     public function boot()
     {
-		// cargar las vistas (por ahora no lo utilizo)
+		// cargar las vistas
         $this->loadViewsFrom(__DIR__.'/views', 'datatable');
 
         $this->publishes([
-            __DIR__ . '/views' => base_path('resources/views/vendor/datatable'),
-            __DIR__ . '/config/config.php' => config_path('datatable.php')
+            __DIR__ . '/Views' => base_path('resources/views/vendor/datatable'),
+            __DIR__ . '/Config/config.php' => config_path('datatable.php')
         ]);
     }
 	
